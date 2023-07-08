@@ -13,7 +13,7 @@ def generate_response(input_text):
 col1, col2, col3 = st.columns([4,2,1])
 with col1:
     prompt = st.chat_input("Say something")
-  if prompt:
+    if prompt:
       st.write(f"User has sent the following prompt: {prompt}")
     
 with col2:
