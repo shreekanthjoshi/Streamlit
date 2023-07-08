@@ -1,7 +1,7 @@
 
 import streamlit as st
 from langchain.llms import OpenAI
-from streamlit_chat import chat
+from streamlit-chat import chat
 
 @st.cache(allow_output_mutation=True)
 def get_chat():
