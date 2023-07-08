@@ -1,6 +1,11 @@
 
 import streamlit as st
 from langchain.llms import OpenAI
+from streamlit_chat import chat
+
+@st.cache(allow_output_mutation=True)
+def get_chat():
+    return chat()
 
 st.title('🦜🔗 Quickstart App')
 
@@ -12,9 +17,8 @@ def generate_response(input_text):
   
 col1, col2, col3 = st.columns([4,2,1])
 with col1:
-    prompt = st.chat_input("Say something")
-    if prompt:
-      st.write(f"User has sent the following prompt: {prompt}")
+    chat = get_chat()
+    chat.add_message("Hello, how can I help you today?", "bot")
     
 with col2:
   with st.form('my_form'):
